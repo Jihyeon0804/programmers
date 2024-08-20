@@ -1,14 +1,11 @@
 class Solution {
     public String solution(String my_string, int num1, int num2) {
+        char[] arr = my_string.toCharArray();
         
-        StringBuilder sb = new StringBuilder();
+        char temp = arr[num1];
+        arr[num1] = arr[num2];
+        arr[num2] = temp;
         
-        sb.append(my_string, 0, num1);
-        sb.append(my_string, num2, num2+1);
-        sb.append(my_string, num1 + 1, num2);
-        sb.append(my_string, num1, num1 + 1);
-        sb.append(my_string, num2 + 1, my_string.length());
-        
-        return sb.toString();
+        return String.valueOf(arr);
     }
 }
