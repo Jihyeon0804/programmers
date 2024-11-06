@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import java.math.BigInteger;
+// import java.math.BigInteger;
 
 public class Main {
     public static void main(String[] args) {
@@ -7,13 +7,14 @@ public class Main {
         
         int x = scan.nextInt();
         
-        BigInteger[] fibo = new BigInteger[x + 1];
+        long[] fibo = new long[x + 1];
         
-        fibo[0] = BigInteger.ZERO;
-        fibo[1] = BigInteger.ONE;
+        fibo[0] = 0;
+        fibo[1] = 1;
         
         for (int i = 2; i <= x; i++) {
-            fibo[i] = fibo[i - 1].add(fibo[i - 2]);
+            // fibo[i] = fibo[i - 1].add(fibo[i - 2]);
+            fibo[i] = fibo[i - 1] + fibo[i - 2];
         }
         
         System.out.println(fibo[x]);
